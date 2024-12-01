@@ -33,7 +33,7 @@ export default function ContactForm() {
   } = useForm<FormData>({
     resolver: zodResolver(validationSchema),
   });
-  
+
   const onSubmit = async (data: FormData) => {
     setWaitForRes(true);
 
@@ -42,6 +42,7 @@ export default function ContactForm() {
       // Optionally, clear the form or show a success message
     } catch (error) {
       // Handle the error if needed, already shown by toast
+      console.log(error);
     } finally {
       setWaitForRes(false);
     }
