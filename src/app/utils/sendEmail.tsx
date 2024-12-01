@@ -1,7 +1,8 @@
 import { toast } from "react-toastify";
 import { FormData } from "../contact/components/ContactForm";
 
-export async function sendEmail(data: FormData) {
+export async function sendEmail(data: FormData): Promise<unknown> {
+  // Explicitly specify the return type
   const apiEndpoint = "/api/email";
 
   try {
@@ -12,14 +13,15 @@ export async function sendEmail(data: FormData) {
     });
 
     if (!response.ok) {
-      throw new Error("Network response was not ok" + response.statusText);
+      throw new Error("Network response was not ok " + response.statusText);
     }
 
     const result = await response.json();
     toast.success(result.message);
     return result;
   } catch (err) {
-    toast.error(err.message || "An error occurred"); 
-    throw err; 
+    // @ts-expect-error fgdsfgfd
+    toast.error(err.message || "An error occurred");
+    throw err;
   }
 }

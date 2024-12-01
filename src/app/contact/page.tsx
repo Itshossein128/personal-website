@@ -13,7 +13,7 @@ export default function Contact() {
       <div className="grid md:grid-cols-[350px,auto] gap-10">
         <div>
           <span className="font-semibold text-2xl mb-4 block">
-            Don't be shy!
+            Don&apos;t be shy!
           </span>
           <p className="mb-4">
             Feel free to get in touch with me. I am always open to discussing
