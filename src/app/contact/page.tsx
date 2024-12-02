@@ -30,9 +30,7 @@ export default function Contact() {
                   Address Point
                 </span>
                 <br />
-                <span>
-                  123 Stree New York City , United States Of America 750065.
-                </span>
+                <span>Iran, Shiraz, Fath-al-Mobin Street, Alley 46.</span>
               </div>
             </li>
             <li>
