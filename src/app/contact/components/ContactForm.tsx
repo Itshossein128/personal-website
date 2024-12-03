@@ -53,7 +53,7 @@ export default function ContactForm() {
       <div className="grid sm:grid-cols-2 gap-y-6 gap-x-4 *:flex *:flex-col">
         <label>
           <input
-            className="bg-[#252525] rounded-3xl py-3 px-4 text-white"
+            className="bg-[#e9e9e9] dark:bg-[#252525] rounded-3xl py-3 px-4 text-black dark:text-white outline-none"
             {...register("name")}
             placeholder="Your Name"
           />
@@ -64,7 +64,8 @@ export default function ContactForm() {
 
         <label>
           <input
-            className="bg-[#252525] rounded-3xl py-3 px-4 text-white"
+            autoCapitalize="off"
+            className="bg-[#e9e9e9] dark:bg-[#252525] rounded-3xl py-3 px-4 text-black dark:text-white outline-none"
             {...register("email")}
             placeholder="Your Email"
           />
@@ -75,7 +76,7 @@ export default function ContactForm() {
 
         <label className="sm:col-span-2">
           <input
-            className="bg-[#252525] rounded-3xl py-3 px-4 text-white"
+            className="bg-[#e9e9e9] dark:bg-[#252525] rounded-3xl py-3 px-4 text-black dark:text-white outline-none"
             {...register("subject")}
             placeholder="Your Subject"
           />
@@ -86,7 +87,7 @@ export default function ContactForm() {
 
         <label className="sm:col-span-2">
           <textarea
-            className="bg-[#252525] rounded-3xl py-3 px-4 text-white min-h-44"
+            className="bg-[#e9e9e9] dark:bg-[#252525] rounded-3xl py-3 px-4 text-black dark:text-white min-h-44 outline-none"
             {...register("message")}
             placeholder="Your Message"
           ></textarea>
