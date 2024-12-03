@@ -52,10 +52,17 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-  -webkit-text-fill-color: #ffffff;
-  transition: background-color 60000s ease-in-out 0s;
+  -webkit-text-fill-color: #000000;
+  box-shadow: 0 0 0 100px #e9e9e9 inset;
 }
 
+.dark input:-webkit-autofill,
+.dark input:-webkit-autofill:hover,
+.dark input:-webkit-autofill:focus,
+.dark input:-webkit-autofill:active {
+  -webkit-text-fill-color: #ffffff;
+  box-shadow: 0 0 0 100px #252525 inset;
+}
 
 :root {
   /* Your default theme */
@@ -63,7 +70,7 @@ input:-webkit-autofill:active {
   --foreground: black;
 }
 
-[data-theme='dark'] {
+[data-theme="dark"] {
   --background: black;
   --foreground: white;
 }
