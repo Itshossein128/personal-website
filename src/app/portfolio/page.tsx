@@ -148,13 +148,13 @@ export default function Portfolio() {
                 className="shadow-sm shadow-slate-400/70 border border-slate-200 dark:shadow-slate-400/35 dark:border-slate-800 rounded-md group block"
                 onClick={() => window.open(href, "_blank")}
               >
-                <div className="relative overflow-hidden rounded-tr-md rounded-tl-md pt-[56.25%] border-b border-slate-400/35">
+                <div className="relative overflow-hidden rounded-tr-md rounded-tl-md pt-[56.25%] border-b border-slate-400/35 placeholder-animation">
                   <Image
                     src={imageUrl}
                     alt={title}
                     width={384}
                     height={216}
-                    className="absolute left-0 top-0 w-full transition duration-200 group-hover:scale-[1.05]"
+                    className="absolute left-0 top-0 w-full transition duration-200 group-hover:scale-[1.05] opacity-0"
                   />
                 </div>
                 <div className="p-3">
