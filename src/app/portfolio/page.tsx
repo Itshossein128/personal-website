@@ -159,7 +159,11 @@ export default function Portfolio() {
                 </div>
                 <div className="p-3">
                   <div className="flex items-center justify-between">
-                    <h4 className="text-xl font-semibold">{title}</h4>
+                    <h4 className="text-xl font-semibold">
+                      <a href={href} target="_blank" className="hover:text-primary transition">
+                        {title}
+                      </a>
+                    </h4>
                     <div className="flex items-center gap-3 my-2">
                       <a
                         href={href}
