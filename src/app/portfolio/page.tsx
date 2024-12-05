@@ -154,7 +154,7 @@ export default function Portfolio() {
                     alt={title}
                     width={384}
                     height={216}
-                    className="absolute left-0 top-0 w-full transition duration-200 group-hover:scale-[1.05] opacity-0"
+                    className="absolute left-0 top-0 w-full transition duration-200 group-hover:scale-[1.05]"
                   />
                 </div>
                 <div className="p-3">
