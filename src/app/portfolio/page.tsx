@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { MdPreview } from "react-icons/md";
 import { FaCode } from "react-icons/fa";
 
