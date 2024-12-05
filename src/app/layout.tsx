@@ -32,7 +32,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased px-3`}
       >
-        <ThemeProvider attribute={"class"}>
+        <ThemeProvider attribute={"class"} disableTransitionOnChange>
           <ThemeChanger />
           <aside>
             <nav>
