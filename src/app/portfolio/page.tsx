@@ -87,6 +87,14 @@ const portfoliosData: Tportfolio[] = [
     repo: undefined,
     techs: [techs.jquery.label, techs.bootstrap.label, techs.gulp.label],
   },
+  {
+    title: "Resource Boy",
+    imageUrl: "/baharesalehnia.png",
+    id: 5,
+    href: "https://resourceboy.com/",
+    repo: undefined,
+    techs: [techs.jquery.label, techs.bootstrap.label, techs.gulp.label],
+  },
 ];
 
 export default function Portfolio() {
