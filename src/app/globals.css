@@ -97,6 +97,7 @@ input:-webkit-autofill:active {
   animation: placeholder-animation;
   animation-duration: 1s;
   animation-iteration-count: infinite;
+  z-index: -1;
 }
 .dark .placeholder-animation::after {
   background-image: linear-gradient(
