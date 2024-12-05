@@ -98,6 +98,20 @@ input:-webkit-autofill:active {
   animation-duration: 1s;
   animation-iteration-count: infinite;
 }
+.dark .placeholder-animation::after {
+  background-image: linear-gradient(
+    90deg,
+    rgb(20, 20, 20),
+    rgb(20, 20, 20),
+    rgb(20, 20, 20),
+    rgb(20, 20, 20),
+    rgb(30, 30, 30),
+    rgb(20, 20, 20),
+    rgb(20, 20, 20),
+    rgb(20, 20, 20),
+    rgb(20, 20, 20)
+  );
+}
 
 @keyframes placeholder-animation {
   from {
