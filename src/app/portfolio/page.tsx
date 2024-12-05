@@ -89,7 +89,7 @@ const portfoliosData: Tportfolio[] = [
   },
   {
     title: "Resource Boy",
-    imageUrl: "/baharesalehnia.png",
+    imageUrl: "/resourceboy.png",
     id: 5,
     href: "https://resourceboy.com/",
     repo: undefined,
