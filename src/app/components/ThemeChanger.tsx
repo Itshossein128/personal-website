@@ -18,7 +18,7 @@ const ThemeChanger = () => {
 
   return (
     <button
-      className={`w-10 h-10 rounded-full border-0 outline-0 flex items-center justify-center absolute top-5 right-5 bg-slate-200 dark:bg-slate-800`}
+      className={`w-10 h-10 rounded-full border-0 outline-0 flex items-center justify-center absolute top-3 right-3 lg:top-5 lg:right-5 bg-slate-200 dark:bg-slate-800`}
       onClick={() => {
         setTheme((prev) => (prev === "dark" ? "light" : "dark"));
       }}
