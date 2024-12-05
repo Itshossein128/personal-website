@@ -127,7 +127,7 @@ export default function Portfolio() {
       <h3 className="text-center text-5xl md:text-6xl font-bold mb-16 xl:mb-24 mt-16 xl:mt-24">
         MY <span className="text-primary">PORTFOLIO</span>
       </h3>
-      <ul className="flex items-center justify-center gap-2">
+      <ul className="flex items-center justify-center gap-2 flex-wrap">
         {Object.entries(tags).map(([key, { label, checked }]) => (
           <li
             key={key}
@@ -140,7 +140,7 @@ export default function Portfolio() {
           </li>
         ))}
       </ul>
-      <ul className="grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-5 container m-auto mt-10">
+      <ul className="grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-5 container m-auto mt-10 pb-10">
         {portfolios.map(({ title, imageUrl, id, href, repo, techs }) => {
           return (
             <li key={id}>
