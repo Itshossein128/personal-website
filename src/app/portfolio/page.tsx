@@ -160,7 +160,11 @@ export default function Portfolio() {
                 <div className="p-3">
                   <div className="flex items-center justify-between">
                     <h4 className="text-xl font-semibold">
-                      <a href={href} target="_blank" className="hover:text-primary transition">
+                      <a
+                        href={href}
+                        target="_blank"
+                        className="hover:text-primary transition"
+                      >
                         {title}
                       </a>
                     </h4>
@@ -169,12 +173,17 @@ export default function Portfolio() {
                         href={href}
                         className="hover:text-primary transition"
                         target="_blank"
+                        onClick={(e) => e.stopPropagation()}
                       >
                         <MdPreview size={24} />
                       </a>
                       {repo && (
                         <a
                           href={repo}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            // window.open(repo, "_blank");
+                          }}
                           className="hover:text-primary transition"
                           target="_blank"
                           rel="noopener noreferrer"
