@@ -20,7 +20,7 @@ export default function Contact() {
             new projects, creative ideas or opportunities to be part of your
             visions.
           </p>
-          <ul className="*:flex *:items-start *:gap-3">
+          <ul className="*:flex *:items-start *:gap-3 space-y-5">
             <li>
               <div className="shrink-0 text-primary">
                 <FaMap className="w-full h-full" size={50} />
