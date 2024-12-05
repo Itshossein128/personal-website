@@ -11,13 +11,7 @@ interface TechItem {
 }
 
 interface Techs {
-  next: TechItem;
-  bootstrap: TechItem;
-  tailwind: TechItem;
-  gulp: TechItem;
-  typeScript: TechItem;
-  vanilla: TechItem;
-  jquery: TechItem;
+  [key: string]: TechItem; // Allows string indexing
 }
 
 const techs: Techs = {
@@ -96,7 +90,7 @@ const portfoliosData: Tportfolio[] = [
 ];
 
 export default function Portfolio() {
-  const [tags, setTags] = useState(techs);
+  const [tags, setTags] = useState<Techs>(techs);
   const [portfolios, setPortfolios] = useState(portfoliosData);
 
   const handleTagClick = (label: string) => {
