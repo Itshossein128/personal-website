@@ -122,3 +122,23 @@ input:-webkit-autofill:active {
     transform: translateX(66.66%);
   }
 }
+.nav-item-hover-container {
+  transition: 0.2s;
+}
+.nav-item-hover-container span {
+  transition: 0.2s;
+  opacity: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .nav-item-hover-container:hover {
+    @apply rounded-l-none;
+  }
+  .nav-item-hover-container:hover span {
+    right: 100%;
+    opacity: 1;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    @apply bg-primary;
+  }
+}
