@@ -42,9 +42,9 @@ export default function RootLayout({
           <div className="container mx-auto col-start-2 col-end-3">
             {children}
           </div>
-          <div className="md:grid grid-rows-[1fr,auto,1fr] md:fixed md:top-3 md:right-3 md:h-dvh justify-end">
+          <div className="md:grid grid-rows-[1fr,auto,1fr] md:fixed md:top-3 md:right-3  md:h-dvh justify-end">
             <ThemeChanger />
-            <nav className="md:row-start-2 md:row-end-3 md:block w-full py-4  -mx-3 px-3 md:mx-0 md:px-0 bg-slate-500 md:bg-transparent  fixed bottom-0 ring-0 md:relative">
+            <nav className="md:row-start-2 md:row-end-3 md:block w-full py-3 px-3 md:px-0 bg-slate-950/80  backdrop-blur-lg backdrop-invert-[0.1] md:backdrop-blur-none md:backdrop-invert-0 md:bg-transparent fixed bottom-0 right-0 md:relative shadow-slate-900 dark:shadow-slate-300 shadow-[0_10px_18px_0]">
               <ul className="flex flex-row md:flex-col justify-between w-full items-center md:space-y-4 z-20 relative container m-auto">
                 {[
                   {
@@ -77,7 +77,7 @@ export default function RootLayout({
                     <Link
                       href={href}
                       aria-label={title}
-                      className="bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 w-10 h-10 transition rounded-full flex items-center justify-center relative align-middle hover:bg-primary nav-item-hover-container"
+                      className="bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 w-10 h-10 transition rounded-full flex items-center justify-center relative align-middle hover:bg-primary nav-item-hover-container shadow-sm shadow-black"
                     >
                       {icon}
                       <span className="absolute right-[0%] top-0 h-full hidden md:flex items-center pl-4 bg-slate-200 dark:bg-slate-800 rounded-full pr-2">
