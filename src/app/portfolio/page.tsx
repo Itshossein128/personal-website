@@ -148,7 +148,7 @@ export default function Portfolio() {
           </li>
         ))}
       </ul>
-      <ul className="grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-5 container m-auto mt-10 pb-10">
+      <ul className="grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-5 m-auto mt-10 pb-10">
         {portfolios.map(({ title, imageUrl, id, href, repo, techs }) => {
           return (
             <li key={id}>
