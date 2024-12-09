@@ -38,7 +38,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased px-3 md:grid grid-cols-[60px,auto,60px] pb-16 md:pb-0 bg-slate-50 dark:bg-slate-950`}
       >
-        <ThemeProvider attribute={"class"} disableTransitionOnChange>
+        <ThemeProvider
+          attribute={"class"}
+          defaultTheme="dark"
+          disableTransitionOnChange
+        >
           <div className="container mx-auto col-start-2 col-end-3">
             {children}
           </div>
