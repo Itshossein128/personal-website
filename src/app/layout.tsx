@@ -36,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased px-3 md:grid grid-cols-[60px,auto,60px] pb-16 md:pb-0`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased px-3 md:grid grid-cols-[60px,auto,60px] pb-16 md:pb-0 bg-slate-50 dark:bg-slate-950`}
       >
         <ThemeProvider attribute={"class"} disableTransitionOnChange>
           <div className="container mx-auto col-start-2 col-end-3">
@@ -44,7 +44,7 @@ export default function RootLayout({
           </div>
           <div className="md:grid grid-rows-[1fr,auto,1fr] md:fixed md:top-3 md:right-3  md:h-dvh justify-end">
             <ThemeChanger />
-            <nav className="md:row-start-2 md:row-end-3 md:block w-full py-3 px-3 md:px-0 bg-slate-950/80  backdrop-blur-lg backdrop-invert-[0.1] md:backdrop-blur-none md:backdrop-invert-0 md:bg-transparent fixed bottom-0 right-0 md:relative shadow-slate-900 dark:shadow-slate-300 shadow-[0_10px_18px_0] md:shadow-none">
+            <nav className="md:row-start-2 md:row-end-3 md:block w-full py-3 px-3 md:px-0 bg-gray-900/80  backdrop-blur-lg backdrop-invert-[0.1] md:backdrop-blur-none md:backdrop-invert-0 md:bg-transparent fixed bottom-0 right-0 md:relative shadow-slate-900 dark:shadow-slate-300 shadow-[0_10px_18px_0] md:shadow-none">
               <ul className="flex flex-row md:flex-col justify-between w-full items-center md:space-y-4 z-20 relative container m-auto">
                 {[
                   {

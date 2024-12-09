@@ -1,6 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@media screen and (min-width: 768px) {
+  body:has(.home-main) {
+    background-image: linear-gradient(165deg, #ffb400 35%, transparent 36%);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body:has(.home-main) {
+    background-image: linear-gradient(75deg, #ffb400 25%, transparent 26%);
+  }
+}
+
 .button-hover::after {
   content: "";
   height: 100%;
@@ -141,4 +154,26 @@ input:-webkit-autofill:active {
     border-bottom-right-radius: 0;
     @apply bg-primary;
   }
+}
+
+.home-main {
+  min-height: 100vh;
+}
+/* .home-main::after {
+  content: "";
+  position: absolute;
+  left: -100px;
+  height: 130dvh;
+  width: 400px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-10deg);
+  z-index: -1;
+  @apply bg-primary;
+} */
+
+.first-char-dash::before {
+  content: "";
+  top: 24px;
+  height: 4px;
+  @apply bg-primary w-8 rounded-lg absolute -left-10;
 }
