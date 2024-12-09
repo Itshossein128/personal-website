@@ -9,7 +9,7 @@ export default function Home() {
       <div className="max-w-2xl">
         <div className="pl-10 mb-5">
           <span className="first-char-dash relative font-bold text-4xl text-primary inline-block mb-1">
-            I'm Hossein Mehr.
+            I&apos;m Hossein Mehr.
           </span>
           <br />
           <span className="font-bold text-2xl">Front-End Developer</span>
