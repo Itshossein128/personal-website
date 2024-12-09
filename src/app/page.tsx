@@ -7,7 +7,7 @@ export default function Home() {
         <Image alt="" src={"/avatar2.jpg"} width={700} height={700} />
       </div>
       <div className="max-w-2xl">
-        <div className="pl-10 mb-5">
+        <div className="lg:pl-10 mb-5">
           <span className="first-char-dash relative font-bold text-4xl text-primary inline-block mb-1">
             I&apos;m Hossein Mehr.
           </span>
