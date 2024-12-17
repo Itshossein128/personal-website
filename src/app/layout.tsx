@@ -81,10 +81,10 @@ export default function RootLayout({
                     <Link
                       href={href}
                       aria-label={title}
-                      className="bg-slate-200 dark:bg-slate-800 text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-slate-100 w-10 h-10 transition rounded-full flex items-center justify-center relative align-middle hover:bg-primary nav-item-hover-container shadow-sm shadow-black md:shadow-none"
+                      className="bg-slate-200 dark:bg-slate-800 text-slate-700 hover:text-slate-100 dark:text-slate-300 dark:hover:text-slate-900 w-10 h-10 transition rounded-full flex items-center justify-center relative align-middle hover:bg-primary nav-item-hover-container shadow-sm shadow-black md:shadow-none"
                     >
                       {icon}
-                      <span className="absolute right-[0%] top-0 h-full hidden md:flex items-center pl-4 bg-slate-200 dark:bg-slate-800 rounded-full pr-2">
+                      <span className="absolute right-[0%] top-0 h-full hidden md:flex items-center pl-4 bg-slate-200 dark:bg-slate-800 rounded-full pr-2 text-slate-100 dark:text-slate-900">
                         {title}
                       </span>
                     </Link>
