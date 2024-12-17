@@ -57,7 +57,7 @@ export type Tportfolio = {
 const portfoliosData: Tportfolio[] = [
   {
     title: "My Personal Website",
-    imageUrl: "/arena-skin.png",
+    imageUrl: "/hoseindev.png",
     id: 1,
     href: "https://hossein-personal-website.vercel.app/",
     repo: "https://github.com/Itshossein128/personal-website",
