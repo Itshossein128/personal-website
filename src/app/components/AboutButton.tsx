@@ -12,18 +12,14 @@ export default function AboutButton() {
     <>
       <AnimatedButton
         onClick={() => setShowAboutComponent(true)}
+        className="mx-auto"
         icon={<FaArrowRight style={{ width: "18px", height: "18px" }} />}
       >
         More About Me
       </AnimatedButton>
-      {/* <button
-        className={`border border-primary pl-5 rounded-full flex items-center justify-between gap-7 mt-8 relative overflow-hidden button-hover mx-auto lg:mx-0`}
-      >
-        More About Me
-        <span className="rounded-full h-12 w-12 flex items-center justify-center bg-primary"></span>
-      </button> */}
+
       <div
-        className={`w-full h-[100vh] bg-black/60 fixed top-0 left-0 z-50 backdrop-blur-sm p-3 md:p-5 pb-0 ${
+        className={`w-full h-[100vh] bg-black/60 fixed top-0 left-0 z-50 backdrop-blur-sm p-3 md:p-5 ${
           showAboutComponent ? "" : "hidden"
         }`}
         onClick={() => {
@@ -31,22 +27,20 @@ export default function AboutButton() {
         }}
       >
         <div
-          className={`modal container max-w-5xl m-auto max-h-full overflow-auto ${
+          className={`modal shadow-sm shadow-slate-700 container max-w-5xl m-auto max-h-full relative ${
             showAboutComponent ? "show" : ""
           }`}
           onClick={(e) => e.stopPropagation()}
         >
-          <AboutComponent
-            className="container m-auto  border border-white/20 bg-slate-50 dark:bg-slate-950 p-5 rounded-sm text-left relative"
-            children={
-              <button
-                className="absolute right-1 top-1 text-2xl"
-                onClick={() => setShowAboutComponent(false)}
-              >
-                <IoCloseCircleOutline />
-              </button>
-            }
-          />
+          <div className="overflow-auto max-h-[calc(100vh-40px)]">
+            <AboutComponent className="m-auto border-white/20 bg-slate-50 dark:bg-slate-950 p-5 rounded-sm text-left relative" />
+          </div>
+          <button
+            className="absolute right-3 top-1 text-3xl bg-slate-50 dark:bg-slate-950 rounded-full"
+            onClick={() => setShowAboutComponent(false)}
+          >
+            <IoCloseCircleOutline/>
+          </button>
         </div>
       </div>
     </>
