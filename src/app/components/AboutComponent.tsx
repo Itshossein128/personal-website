@@ -16,7 +16,7 @@ type Tskill = {
 type TExperience = {
   date: string;
   title: string;
-  desc: string;
+  desc: string[];
 };
 
 const skills: Tskill[] = [
@@ -62,11 +62,49 @@ const skills: Tskill[] = [
   },
 ];
 
+const experiences: TExperience[] = [
+  {
+    date: "June 2020 - December 2020",
+    title: "Pandol",
+    desc: [
+      "Design and implementation of responsive user interfaces for multiple websites using HTML, CSS, and JavaScript.",
+      "Collaborated with design and development teams to create engaging and user-friendly interfaces.",
+      "Optimized websites for better performance and enhanced user experience.",
+    ],
+  },
+  {
+    date: "December 2020 - March 2024",
+    title: "PSCR",
+    desc: [
+      "Design and implementation of responsive user interfaces for multiple websites using HTML, CSS, and JavaScript.",
+      "Utilized modern techniques to optimaize code.",
+      "Development of React applications",
+      "Collaboration with the design and development team to create an optimal and engaging user experience.",
+    ],
+  },
+  {
+    date: "March 2024 - July 2024",
+    title: "Pitta",
+    desc: [
+      "Design and implementation of a responsive user interface for the e-commerce website and admin dashboard of the company using React.js.",
+      "Collaboration with the design and development team to create an optimal and engaging user experience.",
+    ],
+  },
+  {
+    date: "October 2024 - Present",
+    title: "Lamerd Cement",
+    desc: [
+      "Design and implementation of a responsive user interface for the company’s software project using Next.js.",
+      "Utilized modern techniques and best practices to create clean and maintainable code.",
+    ],
+  },
+];
+
 export default function AboutComponent({ className, children }: Tprops) {
   return (
     <div className={className}>
       {children}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-16">
         <div>
           <h3 className="text-3xl font-semibold mb-3">Personal Infos</h3>
           <div className="flex gap-10 *:flex *:flex-col leading-8 font-semibold">
@@ -121,7 +159,7 @@ export default function AboutComponent({ className, children }: Tprops) {
           <ExperienceCard number={5} title="Years of Experience" />
         </div>
         <div className="lg:col-span-2">
-          <h5 className="font-semibold text-xl mb-3">Skills:</h5>
+          <h5 className="font-semibold text-2xl mb-3">Skills:</h5>
           <ul className="grid grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-5">
             {skills.map(({ title, items }) => {
               return (
@@ -131,6 +169,24 @@ export default function AboutComponent({ className, children }: Tprops) {
                     {items.map((item) => (
                       <li key={item}>{item}</li>
                     ))}
+                  </ul>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+        <div className="lg:col-span-2">
+          <h5 className="font-semibold text-2xl mb-3">Experiences:</h5>
+          <ul className="grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-5">
+            {experiences.map(({ title, date, desc }) => {
+              return (
+                <li key={date}>
+                  <h6 className="md:text-lg font-semibold">{title}</h6>
+                  <span className="opacity-60 text-sm">{date}</span>
+                  <ul className="list-disc pl-6 space-y-2">
+                    {desc.map((item) => {
+                      return <li key={item}>{item}</li>;
+                    })}
                   </ul>
                 </li>
               );
