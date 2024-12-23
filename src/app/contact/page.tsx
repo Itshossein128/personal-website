@@ -10,7 +10,7 @@ export default function Contact() {
       <h3 className="text-center text-5xl md:text-6xl font-bold mb-16 xl:mb-24 mt-16 xl:mt-24">
         GET IN <span className="text-primary">TOUCH</span>
       </h3>
-      <div className="grid md:grid-cols-[450px,auto] gap-10">
+      <div className="grid lg:grid-cols-[350px,auto] xl:grid-cols-[500px,auto] gap-10">
         <div>
           <span className="font-semibold text-2xl mb-4 block">
             Don&apos;t be shy!
