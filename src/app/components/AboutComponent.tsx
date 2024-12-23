@@ -107,50 +107,52 @@ export default function AboutComponent({ className, children }: Tprops) {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-16">
         <div>
           <h3 className="text-3xl font-semibold mb-3">Personal Infos</h3>
-          <div className="flex gap-10 *:flex *:flex-col leading-8 font-semibold">
-            <div>
+          <div className="flex gap-3 sm:gap-10 *:flex *:flex-col leading-8 font-semibold">
+            <div className="*:flex *:gap-1 *:flex-col *:sm:flex-row">
               <span>
-                <span className="opacity-75 !font-normal">First Name</span>:
+                <span className="opacity-75 !font-normal">First Name:</span>
                 Hossein
               </span>
               <span>
-                <span className="opacity-75 !font-normal">Age</span>: 23 Years
+                <span className="opacity-75 !font-normal">Age:</span> 23 Years
               </span>
               <span>
-                <span className="opacity-75 !font-normal">Freelance</span>:
+                <span className="opacity-75 !font-normal">Freelance:</span>
                 Available
               </span>
               <span>
-                <span className="opacity-75 !font-normal">Phone</span>:
+                <span className="opacity-75 !font-normal">Phone:</span>
                 +989170745471
               </span>
             </div>
-            <div>
+            <div className="*:flex *:gap-1 *:flex-col *:sm:flex-row">
               <span>
-                <span className="opacity-75 !font-normal">Last Name</span>:
+                <span className="opacity-75 !font-normal">Last Name:</span>
                 Akbari
               </span>
               <span>
-                <span className="opacity-75 !font-normal">Nationality</span>:
+                <span className="opacity-75 !font-normal">Nationality:</span>
                 Iran
               </span>
               <span>
-                <span className="opacity-75 !font-normal">Email</span>:
+                <span className="opacity-75 !font-normal">Email:</span>
                 itshossein128@gmail.com
               </span>
               <span>
-                <span className="opacity-75 !font-normal">langages</span>:
+                <span className="opacity-75 !font-normal">Languages:</span>
                 Persian, English
               </span>
             </div>
           </div>
-          <AnimatedButton
-            icon={
-              <HiDocumentDownload style={{ width: "24px", height: "24px" }} />
-            }
-          >
-            Download CV
-          </AnimatedButton>
+          <a href="/hossein-mehr-resume.pdf" download="hossein-mehr-resume.pdf" className="contents">
+            <AnimatedButton
+              icon={
+                <HiDocumentDownload style={{ width: "24px", height: "24px" }} />
+              }
+            >
+              Download CV
+            </AnimatedButton>
+          </a>
         </div>
         <div className="grid grid-cols-2 gap-5">
           <ExperienceCard number={4} title="Years of Experience" />
