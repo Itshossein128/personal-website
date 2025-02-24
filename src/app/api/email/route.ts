@@ -2,21 +2,21 @@ import { type NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 import type Mail from 'nodemailer/lib/mailer';
 
-export async function POST(request: NextRequest): Promise<NextResponse> { // Add return type
+export async function POST(request: NextRequest): Promise<NextResponse> {
     const { email, name, subject, message }: { email: string, name: string, subject: string, message: string } = await request.json();
 
     const transport = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: process.env.MY_EMAIL as string, // Ensure type is string
-            pass: process.env.MY_PASSWORD as string, // Ensure type is string
+            user: process.env.MY_EMAIL as string,
+            pass: process.env.MY_PASSWORD as string,
         },
     });
 
     const mailOptions: Mail.Options = {
         from: process.env.MY_EMAIL,
         to: process.env.MY_EMAIL,
-        // cc: email, (uncomment this line if you want to send a copy to the sender)
+        cc: email,
         subject: `Message from ${name} (${email}) about ${subject}`,
         text: message,
     };

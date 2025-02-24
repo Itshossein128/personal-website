@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { ThemeProvider } from "next-themes";
-import ThemeChanger from "@/app/components/ThemeChanger";
+import ThemeChanger from "@/components/ThemeChanger";
 import "./globals.css";
 import Link from "next/link";
 import { MdHome } from "react-icons/md";
@@ -12,12 +12,12 @@ import { MdOutlineWeb } from "react-icons/md";
 import { MdEmail } from "react-icons/md";
 import { MdChat } from "react-icons/md";
 const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
+  src: "../fonts/GeistVF.woff",
   variable: "--font-geist-sans",
   weight: "100 900",
 });
 const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
+  src: "../fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
   weight: "100 900",
 });

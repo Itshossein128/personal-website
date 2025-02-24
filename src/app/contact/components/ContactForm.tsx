@@ -4,7 +4,7 @@ import { z, ZodType } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { RiSendPlaneFill } from "react-icons/ri";
-import { sendEmail } from "@/app/utils/sendEmail";
+import { sendEmail } from "@/utils/sendEmail";
 import { useState } from "react";
 
 export type FormData = {

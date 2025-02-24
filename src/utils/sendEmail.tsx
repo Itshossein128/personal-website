@@ -1,5 +1,5 @@
 import { toast } from "react-toastify";
-import { FormData } from "../contact/components/ContactForm";
+import { FormData } from "../app/contact/components/ContactForm";
 
 export async function sendEmail(data: FormData): Promise<unknown> {
   // Explicitly specify the return type
