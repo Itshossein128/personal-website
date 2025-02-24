@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import AboutButton from "./components/AboutButton";
+import AboutButton from "../components/AboutButton";
 
 export default function Home() {
   return (
