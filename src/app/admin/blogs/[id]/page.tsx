@@ -1,6 +1,14 @@
-import { getDb } from "@/lib/db";
-import { BlogPost } from "@/types/blog";
-import { ObjectId } from "mongodb";
+"use client"; // اضافه کردن این خط برای تبدیل به Client Component
+
+import { useEffect, useState } from "react";
+import { useParams } from "next/navigation"; // اضافه کردن useParams
+
+interface BlogPost {
+  _id: string;
+  title: string;
+  content: string;
+  likes: number;
+}
 
 // تابع کمکی برای رندر محتوای کامل EditorJS
 function renderFullEditorJSContent(content: string): JSX.Element {
@@ -31,14 +39,21 @@ function renderFullEditorJSContent(content: string): JSX.Element {
               key={index}
               src={block.data.file?.url || ""}
               alt={block.data.caption || ""}
+              width={800} // تنظیم اندازه پیش‌فرض
+              height={400} // تنظیم اندازه پیش‌فرض
               className="max-w-full h-auto mb-4 rounded"
             />
           );
         case "quote":
           return (
-            <blockquote key={index} className="border-l-4 pl-4 mb-4 italic text-gray-700">
+            <blockquote
+              key={index}
+              className="border-l-4 pl-4 mb-4 italic text-gray-700"
+            >
               {block.data.text || ""}
-              {block.data.caption && <cite className="block mt-2">— {block.data.caption}</cite>}
+              {block.data.caption && (
+                <cite className="block mt-2">— {block.data.caption}</cite>
+              )}
             </blockquote>
           );
         case "embed":
@@ -50,6 +65,8 @@ function renderFullEditorJSContent(content: string): JSX.Element {
               height="315"
               frameBorder="0"
               allowFullScreen
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
               className="mb-4 rounded"
             />
           );
@@ -89,16 +106,30 @@ function renderFullEditorJSContent(content: string): JSX.Element {
   }
 }
 
-export default async function BlogDetailPage({ params }: { params: { id: string } }) {
-  const db = await getDb();
-  const blog = await db.collection<BlogPost>("blogs").findOne({
-    _id: new ObjectId(params.id),
-  });
+export default function BlogDetailPage() {
+  const params = useParams(); // استفاده از useParams برای دریافت params
+  const [blog, setBlog] = useState<BlogPost | null>(null);
+
+  useEffect(() => {
+    if (!params?.id) return; // چک کردن وجود id
+    const fetchBlog = async () => {
+      try {
+        const response = await fetch(`/api/blogs/${params.id}`);
+        if (!response.ok) throw new Error("Blog not found");
+        const blogData = await response.json();
+        setBlog(blogData);
+      } catch (error) {
+        console.error("Error fetching blog:", error);
+      }
+    };
+
+    fetchBlog();
+  }, [params?.id]);
 
   if (!blog) {
     return (
       <div className="container mx-auto p-4">
-        <h1 className="text-2xl font-bold mb-4">Blog not found</h1>
+        <h1 className="text-2xl font-bold mb-4">Loading...</h1>
       </div>
     );
   }
@@ -109,7 +140,6 @@ export default async function BlogDetailPage({ params }: { params: { id: string 
       <div className="prose max-w-none">
         {renderFullEditorJSContent(blog.content)}
       </div>
-   
     </div>
   );
 }
