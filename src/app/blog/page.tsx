@@ -7,8 +7,8 @@ export default function Blog() {
       <div className="text-center">
         <span className="font-semibold  text-lg">## Please Check Back!</span> 
         <br /> 
-        I&#39m in the process of creating
-        new content. Very soon, you&#39ll find exciting and informative posts here.
+        I&apos;m in the process of creating
+        new content. Very soon, you&apos;ll find exciting and informative posts here.
         Please check back!
       </div>
     </main>

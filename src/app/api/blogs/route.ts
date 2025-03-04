@@ -20,8 +20,6 @@ export async function POST(request: Request) {
       title,
       content,
       images: [],
-      likes: 0,
-      comments: [],
       createdAt: new Date(),
     };
 
