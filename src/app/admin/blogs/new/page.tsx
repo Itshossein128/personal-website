@@ -1,29 +1,86 @@
-// app/admin/blogs/new/page.tsx
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import EditorJS from "@editorjs/editorjs";
+import Header from "@editorjs/header";
+import Paragraph from "@editorjs/paragraph";
+import ImageTool from "@editorjs/image";
+import Quote from "@editorjs/quote";
+//@ts-ignore
+import Embed from "@editorjs/embed";
+//@ts-ignore
+import Link from "@editorjs/link";
+import List from "@editorjs/list";
 import { post } from "@/services/httpService";
 
 export default function NewBlogPage() {
   const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
+  const editorInstance = useRef<EditorJS | null>(null);
+  const editorContainerRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
-  // Set the cookie on mount (for testing; ideally, do this after login)
-  // useEffect(() => {
-  //   document.cookie = `authToken=ADMIN_TOKEN=${
-  //     process.env.NEXT_PUBLIC_ADMIN_TOKEN || "my-super-secret-admin-key-2025"
-  //   }; path=/`;
-  // }, []);
+  useEffect(() => {
+    if (!editorInstance.current && editorContainerRef.current) {
+      editorInstance.current = new EditorJS({
+        holder: editorContainerRef.current,
+
+        tools: {
+          header: Header,
+          paragraph: Paragraph,
+          image: {
+            class: ImageTool,
+            config: {
+              endpoints: {
+                byFile: "/api/upload", // endpoint سرور برای آپلود فایل
+                byUrl: "/api/upload?url=true", // endpoint برای آپلود از URL
+              },
+              additionalRequestHeaders: {
+                Authorization: "Bearer your-token-here", // اگه نیاز به احراز هویت دارید
+              },
+            },
+          },
+          quote: Quote,
+          embed: {
+            class: Embed,
+            config: { services: { youtube: true } },
+          },
+          list: List,
+          link: Link,
+        },
+        placeholder: "Start writing your blog content here...",
+        onReady: () => {
+          console.log("Editor.js is ready to work!");
+        },
+      });
+    }
+
+    return () => {
+      if (editorInstance.current) {
+        editorInstance.current.isReady
+          .then(() => {
+            editorInstance.current?.destroy?.();
+          })
+          .catch((e) => console.error("Error during cleanup:", e))
+          .finally(() => {
+            editorInstance.current = null;
+          });
+      }
+    };
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
+      if (!editorInstance.current) return;
+
+      const savedData = await editorInstance.current.save();
+      const content = JSON.stringify(savedData);
+
       await post("/blogs", { title, content }, { authenticated: true });
       router.push("/admin/blogs");
     } catch (error) {
-      console.log(error)
+      console.log(error);
       alert("Failed to create blog");
     }
   };
@@ -46,16 +103,10 @@ export default function NewBlogPage() {
           />
         </div>
         <div>
-          <label htmlFor='content' className='block'>
-            Content
-          </label>
-          <textarea
-            id='content'
-            value={content}
-            onChange={(e) => setContent(e.target.value)}
-            className='w-full p-2 border rounded'
-            rows={5}
-            required
+          <label className='block'>Content</label>
+          <div
+            ref={editorContainerRef}
+            className='w-full p-2 border rounded min-h-[200px]'
           />
         </div>
         <button
